@@ -1,20 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
-
-class Main extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>
-          <Link to="/">Instagrum</Link>
-        </h1>
-        {React.Children.map(this.props.children, (child) => React.cloneElement(child))}
-
-
-      </div>
-    )
-  }
-}
+//
+// class Main extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>
+//           <Link to="/">Instagrum</Link>
+//         </h1>
+//         {React.Children.map(this.props.children, (child) => React.cloneElement(child))}
+//       </div>
+//     )
+//   }
+// }
 // console.log('in main');
 //
 // const Main = ({children}) => {
@@ -33,19 +31,17 @@ class Main extends React.Component {
 //   )
 // }
 
-// const Main = React.createClass({
-//   render() {
-//     let tasoeur = this.props;
-//     console.log(tasoeur);
-//     return (
-//       <div>
-//         <h1>
-//           <Link to="/">Reduxstagram</Link>
-//         </h1>
-//         {React.cloneElement(this.props.children,  tasoeur })}
-//       </div>
-//     )
-//   }
-// });
+const Main = React.createClass({
+  render() {
+    return (
+      <div>
+        <h1>
+          <Link to="/">Reduxstagram</Link>
+        </h1>
+        {React.cloneElement(this.props.children, this.props)}
+      </div>
+    )
+  }
+});
 
 export default Main
