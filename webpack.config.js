@@ -3,7 +3,10 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
-  entry: './instagrum.js',
+  entry: [
+    'webpack-hot-middleware/client',
+    './client/instagrum'
+  ],
   output: {
     path: __dirname,
     filename: 'bundle.js'
@@ -19,8 +22,14 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['react', 'es2015']
         }
+      },
+      // CSS
+      {
+        test: /\.styl$/,
+        include: path.join(__dirname, 'client'),
+        loader: 'style-loader!css-loader!stylus-loader'
       }
     ]
   },
