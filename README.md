@@ -11,5 +11,7 @@ npm install
  
 node devServer.js
 
+Note: In order to have the redux dev tools working, you need to have the chrome redux tool plugin installed.
+
 # Enjoy, Jah !
 
